@@ -1,5 +1,6 @@
-import { useState } from "react";
 import classnames from "classnames";
+
+import useToggle from "hooks/useToggle";
 
 export interface IBinarySwitch {
   position?: number;
@@ -8,39 +9,37 @@ export interface IBinarySwitch {
 }
 
 const BinarySwitch = (props: IBinarySwitch) => {
-  const [on, toggle] = useState(false);
+  const { on, off } = props;
 
-  const onClick = () => {
-    const cb = on ? props.off : props.on;
-
-    if (cb) {
-      cb();
-    }
-
-    toggle((prev: boolean) => !prev);
-  };
+  const { toggle, onToggle } = useToggle({ on, off });
 
   return (
     <div
-      className={classnames("flex flex-col", "w-24 h-64", "p-2", "bg-gray-50")}
+      className={classnames(
+        "flex flex-col",
+        "h-64 p-2",
+        "border-8 border-gray-100",
+        "rounded-full shadown:md",
+        "bg-gray-800"
+      )}
+      onClick={onToggle}
       data-testid={`binary-switch-${props.position}`}
     >
       <div
         className={classnames(
           "flex justify-center items-center",
-          "w-full h-24",
-          "rounded hover:cursor-pointer",
-          { "bg-green-400": on === true, "bg-red-400": on === false },
+          "w-24 h-24",
+          "rounded-full hover:cursor-pointer",
+          { "bg-green-400": toggle === true, "bg-red-400": toggle === false },
           {
             transform: true,
             "duration-300 ease-in-out": true,
-            "translate-y-36": on === false,
+            "translate-y-32": toggle === false,
           }
         )}
-        onClick={onClick}
       >
         <span className="text-white text-6xl font-bold select-none">
-          {on ? "1" : "0"}
+          {toggle ? "1" : "0"}
         </span>
       </div>
     </div>

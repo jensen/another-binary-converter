@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import classnames from "classnames";
-import BinarySwitch, { IBinarySwitch } from "components/BinarySwitch";
+
+import BinarySwitch from "components/BinarySwitch";
+import Decimal from "components/Decimal";
+import Title from "components/Title";
 
 interface IPanel {
   on: (position: number) => void;
@@ -18,8 +21,9 @@ const Panel = (props: React.PropsWithChildren<IPanel>) => {
       throw new Error("Use a BinarySwitch as a child of the Panel");
     }
 
-    if ((child as React.ReactElement).props) {
+    if (React.isValidElement(child)) {
       const position = total - index - 1;
+
       return React.cloneElement(child as React.ReactElement, {
         ...(child as React.ReactElement).props,
         position,
@@ -31,19 +35,15 @@ const Panel = (props: React.PropsWithChildren<IPanel>) => {
     return child;
   });
 
-  return <div className="flex border-t border-b">{switches}</div>;
-};
-
-interface IDecimal {
-  value: number;
-}
-
-const Decimal = (props: IDecimal) => {
   return (
-    <div className="border-t border-b p-2">
-      <span className="text-6xl font-bold" data-testid="decimal-result">
-        {props.value}
-      </span>
+    <div
+      className={classnames(
+        "flex justify-center space-x-2",
+        "p-8",
+        "bg-gray-900"
+      )}
+    >
+      {switches}
     </div>
   );
 };
@@ -57,7 +57,8 @@ const Converter = () => {
     setDecimal((prev) => prev - Math.pow(2, position));
 
   return (
-    <>
+    <main className="h-full bg-gray-900">
+      <Title />
       <Panel on={on} off={off}>
         <BinarySwitch />
         <BinarySwitch />
@@ -68,8 +69,10 @@ const Converter = () => {
         <BinarySwitch />
         <BinarySwitch />
       </Panel>
-      <Decimal value={decimal} />{" "}
-    </>
+      <section className="flex justify-center">
+        <Decimal value={decimal} />
+      </section>
+    </main>
   );
 };
 

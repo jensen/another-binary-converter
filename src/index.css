@@ -2,15 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.moveAnim {
-  animation: moveAnim 1s alternate 1;
-}
-
-@keyframes moveAnim {
-  from {
-    flex: none;
-  }
-  to {
-    flex: 1;
-  }
+html,
+body,
+#root {
+  height: 100%;
 }
