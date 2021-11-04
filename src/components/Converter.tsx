@@ -6,8 +6,15 @@ import Decimal from "components/Decimal";
 import Title from "components/Title";
 
 const Converter = () => {
+  /* We store our starting decimal value. */
   const [decimal, setDecimal] = useState(0);
 
+  /*
+    The conversion is done as users toggle switches.
+    
+    We either add or remove the value at the position
+    of the toggled switch.
+  */
   const on = (position: number) =>
     setDecimal((prev) => prev + Math.pow(2, position));
   const off = (position: number) =>
