@@ -61,3 +61,17 @@ Tests:       7 passed, 7 total
 Snapshots:   0 total
 Time:        3.259 s
 ```
+
+### Setup
+
+**Install Dependencies**
+
+`npm install`
+
+**Run Application**
+
+`npm start`
+
+**Run Tests**
+
+`npm test`
