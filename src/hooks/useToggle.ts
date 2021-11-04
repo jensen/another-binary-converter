@@ -5,16 +5,19 @@ interface IUseToggle {
   off?: () => void;
 }
 
-const useToggle = ({ on, off }: IUseToggle) => {
-  if (!on || !off) throw new Error("on or off callback not declared");
+const useToggle = (callbacks: IUseToggle = {}) => {
+  if (!callbacks.on) throw new Error("on callback not declared");
+  if (!callbacks.off) throw new Error("off callback not declared");
+
+  const { on, off } = callbacks;
 
   const [value, setValue] = useState(false);
 
   const onToggle = () => {
-    const cb = value ? off : on;
-
-    if (cb) {
-      cb();
+    if (value) {
+      off();
+    } else {
+      on();
     }
 
     setValue((prev: boolean) => !prev);
