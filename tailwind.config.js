@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        "main-title": "16rem",
+        "main-title": "8rem",
       },
       lineHeight: {
         xtight: "0.8",
