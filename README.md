@@ -13,7 +13,9 @@ This project was completed as part of a group learning exercise.
 3.  User can toggle swithes to input an 8 digit binary number
 4.  User views the results in a single output field containing the decimal (base 10) equivalent of the binary number that was ~~entered~~ selected
 
-Wanted to do something with a more specific user experience. The switches only allow for `0` or `1` which means no notification is not necessary.
+I wanted to do something with a more specific user experience. The switches only allow for `0` or `1` which means no notification is not necessary.
+
+![abc_demo](https://user-images.githubusercontent.com/14803/140261994-1df9ccfd-d846-462c-8189-6e7efc84e573.gif)
 
 ## Technical Specifications
 
