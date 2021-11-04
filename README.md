@@ -10,7 +10,7 @@ This project was completed as part of a group learning exercise.
 
 1.  ~~User can enter up to 8 binary digits in one input field~~
 2.  ~~User must be notified if anything other than a 0 or 1 was entered~~
-3.  User can toggle swithes to input an 8 digit binary number
+3.  User can toggle switches to input an 8 digit binary number
 4.  User views the results in a single output field containing the decimal (base 10) equivalent of the binary number that was ~~entered~~ selected
 
 I wanted to do something with a more specific user experience. The switches only allow for `0` or `1` which means no notification is necessary.
