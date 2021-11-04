@@ -17,9 +17,9 @@ const BinarySwitch = (props: IBinarySwitch) => {
     <div
       className={classnames(
         "flex flex-col",
-        "h-64 p-2",
-        "border-8 border-gray-100",
-        "rounded-full shadown:md",
+        "xs:h-16 sm:h-16 md:h-32 lg:h-48 xl:h-64 xs:p-1 sm:p-2",
+        "xs:border-2 md:border-8 border-gray-100",
+        "rounded-full shadow:md",
         "bg-gray-800"
       )}
       onClick={onToggle}
@@ -28,17 +28,19 @@ const BinarySwitch = (props: IBinarySwitch) => {
       <div
         className={classnames(
           "flex justify-center items-center",
-          "w-24 h-24",
+          "xs:w-4 sm:w-4 md:w-8 lg:w-12 xl:w-24",
+          "xs:h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24",
           "rounded-full hover:cursor-pointer",
           { "bg-green-400": toggle === true, "bg-red-400": toggle === false },
           {
             transform: true,
             "duration-300 ease-in-out": true,
-            "translate-y-32": toggle === false,
+            "xs:translate-y-4 sm:translate-y-4 md:translate-y-8 lg:translate-y-20 xl:translate-y-32":
+              toggle === false,
           }
         )}
       >
-        <span className="text-white text-6xl font-bold select-none">
+        <span className="text-white xs:text-sm sm:text-xl md:text-4xl lg:text-6xl font-bold select-none">
           {toggle ? "1" : "0"}
         </span>
       </div>
