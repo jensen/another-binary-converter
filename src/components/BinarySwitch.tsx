@@ -17,7 +17,7 @@ const BinarySwitch = (props: IBinarySwitch) => {
     <div
       className={classnames(
         "flex flex-col",
-        "xs:h-16 sm:h-16 md:h-32 lg:h-48 xl:h-64 xs:p-1 sm:p-2",
+        "xs:h-16 sm:h-24 md:h-32 lg:h-48 xl:h-64 xs:p-1 lg:p-2",
         "xs:border-2 md:border-8 border-gray-100",
         "rounded-full shadow:md",
         "bg-gray-800"
@@ -35,7 +35,7 @@ const BinarySwitch = (props: IBinarySwitch) => {
           {
             transform: true,
             "duration-300 ease-in-out": true,
-            "xs:translate-y-4 sm:translate-y-4 md:translate-y-8 lg:translate-y-20 xl:translate-y-32":
+            "xs:translate-y-5 sm:translate-y-9 md:translate-y-10 lg:translate-y-20 xl:translate-y-32":
               toggle === false,
           }
         )}
