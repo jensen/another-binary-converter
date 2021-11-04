@@ -28,7 +28,7 @@ I have provided two implementations that allow us to calculate a decimal number 
 
 The first implementation is a simple recursive sum of the decimal value for each binary digit. Details of this can be found at [src/utils/calculator.ts](src/utils/calculator.ts). I decided I didn't need this for the application, but I wrote a test to verify that the function works as expected.
 
-The second implementation takes advantage of Reacts component model. Each binary switch knows the position that it holds. When it is toggled, the decimal value of that position is either added or removed from the decimal counter. This code is contained within the [src/components/Converter.tsx](src/components/converter.tsx) file.
+The second implementation takes advantage of Reacts component model. Each binary switch knows the position that it holds. When it is toggled, the decimal value of that position is either added or removed from the decimal counter. This code is contained within the [src/components/Converter.tsx](src/components/Converter.tsx) file.
 
 ### Testing
 
