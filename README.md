@@ -13,9 +13,9 @@ This project was completed as part of a group learning exercise.
 3.  User can toggle swithes to input an 8 digit binary number
 4.  User views the results in a single output field containing the decimal (base 10) equivalent of the binary number that was ~~entered~~ selected
 
-I wanted to do something with a more specific user experience. The switches only allow for `0` or `1` which means no notification is not necessary.
+I wanted to do something with a more specific user experience. The switches only allow for `0` or `1` which means no notification is necessary.
 
-![abc_demo](https://user-images.githubusercontent.com/14803/140261994-1df9ccfd-d846-462c-8189-6e7efc84e573.gif)
+![Another Binary Converter Demo Animation](https://user-images.githubusercontent.com/14803/140261994-1df9ccfd-d846-462c-8189-6e7efc84e573.gif)
 
 ## Technical Specifications
 
@@ -28,7 +28,7 @@ I have provided two implementations that allow us to calculate a decimal number 
 
 The first implementation is a simple recursive sum of the decimal value for each binary digit. Details of this can be found at [src/utils/calculator.ts](src/utils/calculator.ts). I decided I didn't need this for the application, but I wrote a test to verify that the function works as expected.
 
-The second implementation takes advantage of Reacts component model. Each binary switch knows the position that it holds. When it is toggled, the decimal value of that position is either added or removed from the decimal counter. This code contained within the [src/components/Converter.tsx](src/components/converter.tsx) file.
+The second implementation takes advantage of Reacts component model. Each binary switch knows the position that it holds. When it is toggled, the decimal value of that position is either added or removed from the decimal counter. This code is contained within the [src/components/Converter.tsx](src/components/converter.tsx) file.
 
 ### Testing
 
@@ -39,7 +39,7 @@ Since the project was limited in scope, I decided to include some examples of te
 - [Custom Hook unit tests](src/hooks/__tests__/useToggle.test.ts)
 - [Utility function unit tests](src/utils/__tests__/calculator.test.ts)
 
-The cumalative result of these tests is 100% coverate.
+The cumulative result of these tests is 100% coverage.
 
 ```
 -------------------|---------|----------|---------|---------|-------------------
